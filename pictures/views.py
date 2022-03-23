@@ -8,7 +8,7 @@ def welcome(request):
 
 
 
-def pictures_of_day(request):
+def picture(request):
     date = dt.date.today()
     html = f'''
         <html>
