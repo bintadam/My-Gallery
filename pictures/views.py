@@ -6,11 +6,9 @@ import datetime as dt
 def welcome(request):
     return HttpResponse('Welcome to the Zakiya Gallery')
 
+
+
 def pictures_of_day(request):
-    return HttpResponse('pictures')
-
-
-def news_of_day(request):
     date = dt.date.today()
     html = f'''
         <html>
