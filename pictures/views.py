@@ -4,7 +4,7 @@ import datetime as dt
 
 # Create your views here.
 def welcome(request):
-    return HttpResponse('Welcome to the Zakiya Gallery')
+    return render (request, 'welcome.html')
 
 
 
