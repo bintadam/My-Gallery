@@ -3,5 +3,5 @@ from . import views
 
 urlpatterns=[
     re_path('^$',views.welcome,name = 'welcome'),
-    re_path('^picture/$',views.picture,name='picturesToday'),
+    re_path('^pictures/$',views.pictures,name='picturesToday'),
 ]

@@ -8,13 +8,7 @@ def welcome(request):
 
 
 
-def picture(request):
+def pictures(request):
     date = dt.date.today()
-    html = f'''
-        <html>
-            <body>
-                <h1> {date.day}-{date.month}-{date.year}</h1>
-            </body>
-        </html>
-            '''
-    return HttpResponse(html)
+
+    return HttpResponse(request, 'pictures.html')
