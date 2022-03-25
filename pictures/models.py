@@ -8,7 +8,14 @@ class Image(models.Model):
     location = models.ForeignKey() 
 
     def __str__(self):
-      return self.first_name  
+      return self.first_name 
+
+    def save_image(self):
+      self.save()  
+
+
+    def delete_image(self):
+      self.save()   
 
 
 class Location(models.Model):
