@@ -12,12 +12,13 @@ def welcome(request):
 
 
 def pictures(request):
+    
     images = Image.display_all_images()
 
     return render(request, 'all-pictures/pictures.html', {"images":images},)
 
 
-def picture(request, past_date):
+def picture(request, image_id):
     try:
         image = Image.objects.get(id = image_id)
     except ObjectDoesNotExist :
