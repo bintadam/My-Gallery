@@ -1,5 +1,7 @@
 from django.db import models
 
+from pictures.views import pictures
+
 # Create your models here.
 
 class Location(models.Model):
@@ -44,5 +46,28 @@ class Image(models.Model):
 
     def delete_image(self):
       self.save()   
+      
 
+    @classmethod
+    def display_all_images(cls):
+        return cls.objects.all()
+
+    @classmethod
+    def search_by_category(cls,category):
+        mapicha = cls.objects.filter(category__name__icontains=category)
+        return pictures
+
+    # @classmethod
+    # def filter_by_location(cls,location):
+    #     image_location = Image.objects.filter(location__name=location).all()
+    #     return image_location
+
+    # @classmethod
+    # def update_image(cls,id,value):
+    #     cls.objects.filter(id=id).update(image=value)
+
+    # @classmethod
+    # def get_image_by_id(cls,id):
+    #     image = cls.objects.filter(id=id).all()
+    #     return image  
 
