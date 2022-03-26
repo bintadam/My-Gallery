@@ -20,7 +20,7 @@ def pictures(request):
 def picture(request, past_date):
     try:
         image = Image.objects.get(id = image_id)
-    except OjectDoesNotExit:
+    except OjectDoesNotExit :
         
         raise Http404()
     return render (request, 'all-pictures/pictures.html', {"image": image}) 
