@@ -57,17 +57,17 @@ class Image(models.Model):
         mapicha = cls.objects.filter(category__name__icontains=category)
         return pictures
 
-    # @classmethod
-    # def filter_by_location(cls,location):
-    #     image_location = Image.objects.filter(location__name=location).all()
-    #     return image_location
+    @classmethod
+    def filter_by_location(cls,location):
+        image_location = Image.objects.filter(location__name=location).all()
+        return image_location
 
-    # @classmethod
-    # def update_image(cls,id,value):
-    #     cls.objects.filter(id=id).update(image=value)
+    @classmethod
+    def update_image(cls,id,value):
+        cls.objects.filter(id=id).update(image=value)
 
-    # @classmethod
-    # def get_image_by_id(cls,id):
-    #     image = cls.objects.filter(id=id).all()
-    #     return image  
+    @classmethod
+    def get_image_by_id(cls,id):
+        image = cls.objects.filter(id=id).all()
+        return image  
 
