@@ -1,6 +1,9 @@
+from email.mime import image
 from django.shortcuts import render
 from django.http  import HttpResponse
-import datetime as dt
+from .models import Image
+
+from pictures.models import Image
 
 # Create your views here.
 def welcome(request):
@@ -9,6 +12,6 @@ def welcome(request):
 
 
 def pictures(request):
-    date = dt.date.today()
+    image = Image.display_all_images()
 
-    return HttpResponse(request, 'pictures.html')
+    return render(request, 'all-pictures/pictures.html', {"images:images"},)
