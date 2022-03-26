@@ -1,0 +1,61 @@
+{%extends 'all-pictures/base.html'%}
+{% block content%}
+
+<header>
+  <a href="#" class="logo">My Gallery</a>
+  <ul>
+    <li><a href="{%url 'welcome'%}">Home</a></li>
+    <li><a href="{%url 'pictures'%}">Gallery</a></li>
+    <li><a href="{%url 'search_results'%}">Search</a></li>
+  </ul>
+</header>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <img src="{{image.image.url}}" class="img-responsive" alt="" style="width: 500px;">
+    </div>
+    <div class="col-md-6">
+      <p><span>Name:</span>{{image.image_name}}</p>
+      <p><span>Location:</span>{{image.image_location}}</p>
+      <p><span>Description:</span>{{image.image_description}}</p>
+      <p><span>Category:</span>{{image.image_category}}</p>
+    </div>
+  </div>
+</div>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600;700;800;900&display=swap');
+  header{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.6s;
+  padding: 40px 100px;
+  z-index: 100000;
+  }
+  header ul
+  {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+  }
+  header ul li
+{
+  position: relative;
+  list-style: none;
+}
+header ul li a 
+{
+  position: relative;
+  margin: 0 15px;
+  text-decoration: none;
+  color: #fff;
+  letter-spacing: 2px;
+  font-weight: 500px;
+  transition: 0.6s;
+}
+</style>
