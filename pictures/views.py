@@ -1,4 +1,4 @@
-from email.mime import image
+from django.core.exceptions import ObjectDoesNotExist
 from django.shortcuts import render
 from django.http  import HttpResponse, Http404
 from .models import Image
@@ -20,7 +20,7 @@ def pictures(request):
 def picture(request, past_date):
     try:
         image = Image.objects.get(id = image_id)
-    except OjectDoesNotExit :
+    except ObjectDoesNotExist :
         
         raise Http404()
     return render (request, 'all-pictures/pictures.html', {"image": image}) 
@@ -28,13 +28,14 @@ def picture(request, past_date):
 
 def search_results(request):
 
-    if 'article' in request.GET and request.GET["article"]:
-        search_term = request.GET.get("article")
-        searched_articles = pictures.search_by_title(search_term)
-        message = f"{search_term}"
+    if 'picture' in request.GET and request.GET["picture"]:
+        category = request.GET.get("picture")
+        searched_images = Image.search_by_category(category)
+        message = f"{category}"
+        print(searched_images)
 
-        return render(request, 'all-news/search.html',{"message":message,"articles": searched_articles})
+        return render(request, 'all-pictures/search.html',{"message":message,"images": searched_images})
 
     else:
-        message = "You haven't searched for any term"
-        return render(request, 'all-news/search.html',{"message":message})
+        message = "No results available"
+        return render(request, 'all-pictures/search.html',{"message":message})
