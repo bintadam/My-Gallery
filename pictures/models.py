@@ -1,6 +1,5 @@
 from django.db import models
 
-from pictures.views import pictures
 
 # Create your models here.
 
@@ -31,7 +30,7 @@ class Category(models.Model):
       self.save()           
 
 class Image(models.Model):
-    image = models.ImageField()
+    image = models.ImageField(upload_to = 'articles/')
     image_name =models.CharField(max_length=50)
     image_description = models.TextField() 
     location = models.ForeignKey(Location, on_delete=models.CASCADE) 
