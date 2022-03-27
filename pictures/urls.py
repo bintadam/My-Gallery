@@ -6,7 +6,7 @@ from django.conf import settings
 
 urlpatterns=[
     path('',views.welcome,name ='welcome'),
-    path('pictures/',views.pictures,name='pictures'),
+    path('gallery/',views.pictures,name='pictures'),
     path('search/', views.search_results, name='search_results'),
     path('picture/<int:image_id>/',views.picture,name='imageid'),
 ]
