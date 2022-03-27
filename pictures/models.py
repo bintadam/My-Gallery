@@ -18,13 +18,13 @@ class Location(models.Model):
     
 
 class Category(models.Model):
-    name = models.CharField(max_length =50)
+    name = models.CharField(max_length=100)
 
     def __str__(self):
-        return self.name 
+        return self.name
 
     def save_category(self):
-      self.save()  
+        self.save()
 
     def delete_category(self):
       self.save()           
@@ -53,7 +53,7 @@ class Image(models.Model):
 
     @classmethod
     def search_by_category(cls,category):
-        mapicha = cls.objects.filter(category__name__icontains=category)
+        pictures = cls.objects.filter(category__name__icontains=category)
         return pictures
 
     @classmethod
