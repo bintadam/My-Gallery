@@ -29,8 +29,8 @@ def picture(request, image_id):
 
 def search_results(request):
 
-    if 'picture' in request.GET and request.GET["picture"]:
-        category = request.GET.get("picture")
+    if 'searchImage' in request.GET and request.GET["searchPicture"]:
+        category = request.GET.get("searchImage")
         searched_images = Image.search_by_category(category)
         message = f"{category}"
         print(searched_images)
