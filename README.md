@@ -14,6 +14,14 @@ git clone https://github.com/bintadam/My-Gallery.git
 pip install -r ./requirements.txt
 3. Run application
 pyhton manage.py runserver
+
+### Screenshots
+https://user-images.githubusercontent.com/95226095/160923159-8955118a-7116-443f-a41b-c29f45daabe0.png
+https://user-images.githubusercontent.com/95226095/160923322-2fda04d2-cdf1-4c3c-8d5c-d737f5a009c8.png
+https://user-images.githubusercontent.com/95226095/160923421-da26d214-353e-42f7-bf9a-066b92f17737.png
+
+
+
 ### Contributing
 1. Fork the Project
 2. Create your Feature Branch
